@@ -71,7 +71,8 @@ angular.module('students-module',['bootstrap-modal']).factory('form', function($
 			// scope.academic_info.student_id = 0;
 			
 			// scope.parental_info = {};
-			// scope.parental_info.student_id = 0;			
+			// scope.parental_info.student_id = 0;		
+			
 			mode(scope,row);
 			
 			$('#x_content').html(loading);
@@ -87,7 +88,8 @@ angular.module('students-module',['bootstrap-modal']).factory('form', function($
 				  data: {student_id: row.student_id}
 				}).then(function mySucces(response) {
 					
-					angular.copy(response.data['student_info'], scope.student_info);
+					angular.copy(response.data, scope.student_info);
+					// angular.copy(response.data['student_info'], scope.student_info);
 					// angular.copy(response.data['academic_info'], scope.academic_info);
 					// angular.copy(response.data['parental_info'], scope.parental_info);
 					// scope.student.student_birthday = new Date(scope.student.student_birthday);
