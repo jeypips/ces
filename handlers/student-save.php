@@ -16,7 +16,7 @@ if (isset($_POST['student_info']['student_birthday'])) $_POST['student_info']['s
 **
 */
 
-$con = new pdo_db("students");
+$con = new pdo_db("student_infos");
 if ($_POST['student_info']['student_id']) { // > 0 - update
 	$student_info = $con->updateData($_POST['student_info'],'student_id');
 } else { // 0 - insert
